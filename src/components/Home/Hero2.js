@@ -135,7 +135,7 @@ export default function Hero() {
                 What if the one report
                 <br />
                 that could save your <br /> life ... <br />
-                wasn't there when you needed  <br/>
+                wasn&apos;t there when you needed  <br/>
                 it?
               </h1>
 
