@@ -6,6 +6,18 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const enabledUrls = new Set(["/", "/home2"]);
+
+  const navItems = [
+    { url: "/", name: "Home" },
+    { url: "/home2", name: "Home 2" },
+    { url: "/doctors", name: "For Doctors" },
+    { url: "/users", name: "For Users" },
+    { url: "/partners", name: "Partners" },
+    { url: "/resources", name: "Resources" },
+    { url: "/about", name: "About Us" },
+    { url: "/blog", name: "Blog" },
+  ];
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -17,32 +29,47 @@ export default function Header() {
     }
   };
 
-  const data = [
-    { url: "/", name: "Home" },
-    { url: "/doctors", name: "For Doctors" },
-    { url: "/users", name: "For Users" },
-    { url: "/partners", name: "Partners" },
-    { url: "/resources", name: "Resources" },
-    { url: "/about", name: "About Us" },
-    { url: "/blog", name: "Blog" },
-    { url: "/login", name: "Login" },
-  ];
+  const renderNavLink = (item, mobile = false) => {
+    const isEnabled = enabledUrls.has(item.url);
 
-  const menu = (
-    <>
-      {data.map((item, index) => {
-        return (
-          <a
-            key={index}
-            href={item.url}
-            className="underline-offset-2 hover:underline bg-gradient-to-r from-purple-500 via-red-500 to-blue-700 bg-clip-text text-transparent shadow-md p-1 pl-4 font-semibold rounded-[10px] border"
-          >
-            {item.name}
-          </a>
-        );
-      })}
-    </>
-  );
+    if (mobile) {
+      return (
+        <a
+          key={item.name}
+          href={isEnabled ? item.url : undefined}
+          aria-disabled={!isEnabled}
+          className={`rounded-2xl border bg-white px-4 py-3 font-semibold ${
+            isEnabled
+              ? ""
+              : "pointer-events-none cursor-not-allowed opacity-50 select-none"
+          }`}
+        >
+          {item.name}
+        </a>
+      );
+    }
+
+    return (
+      <a
+        key={item.name}
+        href={isEnabled ? item.url : undefined}
+        aria-disabled={!isEnabled}
+        className={`group flex items-center gap-1 ${
+          isEnabled
+            ? "hover:opacity-70"
+            : "pointer-events-none cursor-not-allowed opacity-50 select-none"
+        }`}
+      >
+        {item.name}{" "}
+        <FiArrowUpRight
+          size={18}
+          className={`transition-transform duration-200 ${
+            isEnabled ? "group-hover:rotate-45" : ""
+          }`}
+        />
+      </a>
+    );
+  };
 
   return (
     <header
@@ -75,97 +102,7 @@ export default function Header() {
 
           {/* desktop menu */}
           <nav className="hidden text-[#282672] hover:text-[#0B137A] lg:flex items-center ml-auto gap-14 text-[15px] font-semibold text-[#0d0d0d]">
-            <a href="/" className="group flex items-center gap-1 hover:opacity-70">
-              Home{" "}
-              <FiArrowUpRight
-                size={18}
-                color="282672"
-                className="transition-transform duration-200 group-hover:rotate-45"
-              />
-            </a>
-
-            <a href="/home2" className="group flex items-center gap-1 hover:opacity-70">
-              Home 2{" "}
-              <FiArrowUpRight
-                size={18}
-                color="282672"
-                className="transition-transform duration-200 group-hover:rotate-45"
-              />
-            </a>
-
-            <a href="/doctors" className="group flex items-center gap-1 hover:opacity-70">
-              For Doctors{" "}
-              <FiArrowUpRight
-                size={18}
-                color="282672"
-                className="transition-transform duration-200 group-hover:rotate-45"
-              />
-            </a>
-
-            <a href="/users" className="group flex items-center gap-1 hover:opacity-70">
-              For Users{" "}
-              <FiArrowUpRight
-                size={18}
-                color="282672"
-                className="transition-transform duration-200 group-hover:rotate-45"
-              />
-            </a>
-
-            <a href="/partners" className="group flex items-center gap-1 hover:opacity-70">
-              Partners{" "}
-              <FiArrowUpRight
-                size={18}
-                className="transition-transform duration-200 group-hover:rotate-45"
-              />
-            </a>
-
-            <div className="relative group">
-              <a href="/resources" className="group flex items-center gap-1 hover:opacity-70">
-                Resources{" "}
-                <FiArrowUpRight
-                  size={18}
-                  className="transition-transform duration-200 group-hover:rotate-45"
-                />
-              </a>
-              <div className="absolute left-0 top-full hidden group-hover:block group-focus-within:block w-[145px] rounded-2xl bg-white shadow-xl border p-3">
-                <a className="block rounded-xl py-1  hover:bg-gray-50" href="/resources#resources1">
-                  ABHA / ABDM
-                </a>
-                <a className="block rounded-xl py-1 hover:bg-gray-50" href="/resources#resources2">
-                  Health Guides
-                </a>
-                <a className="block rounded-xl py-1 hover:bg-gray-50" href="/resources#resources3">
-                  Blog
-                </a>
-                <a className="block rounded-xl py-1 hover:bg-gray-50" href="/resources#resources4">
-                  Privacy policy
-                </a>
-              </div>
-            </div>
-
-            <div className="relative group">
-              <a href="/about" className="group flex items-center gap-1 hover:opacity-70">
-                About Us{" "}
-                <FiArrowUpRight
-                  size={18}
-                  className="transition-transform duration-200 group-hover:rotate-45"
-                />
-              </a>
-              <div className="absolute right-0 top-full hidden group-hover:block group-focus-within:block w-[100px] rounded-2xl bg-white shadow-xl border p-3">
-                <a className="block rounded-xl py-1 hover:bg-gray-50" href="/about#about1">
-                  Our Story
-                </a>
-                <a className="block rounded-xl py-1 hover:bg-gray-50" href="/about#about2">
-                  Our Team
-                </a>
-                <a className="block rounded-xl py-1 hover:bg-gray-50" href="/about#about3">
-                  Careers
-                </a>
-                <a className="block rounded-xl py-1 hover:bg-gray-50" href="/about#about4">
-                  Contact Us
-                </a>
-              </div>
-            </div>
+            {navItems.map((item) => renderNavLink(item))}
           </nav>
 
           {/* mobile menu button */}
@@ -185,23 +122,7 @@ export default function Header() {
           }`}
         >
           <div className="px-2 md:px-4 flex flex-col gap-2">
-            {[
-              { url: "/", name: "Home" },
-              { url: "/doctors", name: "For Doctors" },
-              { url: "/users", name: "For Users" },
-              { url: "/partners", name: "Partners" },
-              { url: "/resources", name: "Resources" },
-              { url: "/about", name: "About Us" },
-              { url: "/blog", name: "Blog" },
-            ].map((item) => (
-              <a
-                key={item.name}
-                href={item.url}
-                className="rounded-2xl border bg-white px-4 py-3 font-semibold"
-              >
-                {item.name}
-              </a>
-            ))}
+            {navItems.map((item) => renderNavLink(item, true))}
           </div>
         </div>
       </div>
