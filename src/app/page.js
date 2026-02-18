@@ -20,14 +20,14 @@ export default function Home() {
         <div className="sticky top-[5px] h-screen z-0 bg-white py-6 md:py-12 px-4 md:px-8">
           <ReportCarouselSection />
         </div>
+        <div className="sticky top-[5px] h-screen z-0 top-5">
+          <Realconsequences />
+        </div>
 
-        <div className="sticky top-[5px] h-screen z-0 bg-white py-6 md:py-12 px-4 md:px-8">
+        <div className="sticky top-[45px] h-screen z-0 bg-white py-6 md:py-12 px-4 md:px-8">
           <HealthIdentitySection />
         </div>
 
-        {/* <div className="sticky top-[5px] h-screen z-0">
-          <Realconsequences />
-        </div> */}
 
         {/* <div className="sticky top-[5px] h-screen z-0">
           <Howitworks />
@@ -40,12 +40,14 @@ export default function Home() {
         {/* <div className="sticky top-[5px] h-screen z-0">
           <Subscription />
         </div> */}
-      </div>
 
-      {/* Normal scrolling section after sticky stack ends */}
-      <div className="bg-white py-6 md:py-12 px-4 md:px-8">
+         {/* Normal scrolling section after sticky stack ends */}
+      <div className="bg-white py-6 md:py-12 px-4 md:px-8 sticky top-5 ">
         <DataControlSection />
       </div>
+      </div>
+
+     
     </>
   );
 }

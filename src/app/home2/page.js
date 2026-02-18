@@ -1,9 +1,9 @@
 "use client";
 import Hero2 from "@/components/Home/Hero2";
 import ReportCarouselSection2 from "@/components/Home/ReportCarouselSection2";
-import HealthIdentitySection from "@/components/Home/HealthIdentitySection";
-import LovedOnesSection from "@/components/Home/LovedOnesSection";
-import DataControlSection from "@/components/Home/DataControlSection";
+import HealthIdentitySection from "@/components/Home/HealthIdentitySection2";
+import LovedOnesSection from "@/components/Home/LovedOneSection2";
+import DataControlSection from "@/components/Home/DataControlSection2";
 import ContactCard from "@/components/Home/ContactCard";
 import Howitworks from "@/components/Home/Howitworks";
 import Realconsequences from "@/components/Home/Realconsequences";

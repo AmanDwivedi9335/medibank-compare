@@ -131,7 +131,7 @@ export default function Hero() {
                 
               </p>
 
-              <h1 className="hero-animate mt-4 text-[30px] font-semibold leading-[1.05] text-wave md:text-[50px] md:leading-[1.02]">
+              <h1 className="hero-animate mt-4 text-[30px] font-bold leading-[1.05] text-wave md:text-[65px] md:leading-[0.8]">
                 What if the one report
                 <br />
                 that could save your <br /> life ... <br />

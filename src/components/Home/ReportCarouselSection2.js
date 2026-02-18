@@ -193,7 +193,7 @@ export default function ReportCarouselSection() {
                     </p>
                     </div>
 
-                    <div className="pointer-events-none absolute inset-x-0 top-0 h-[3px] rounded-t-[30px] bg-[#C22ECC] opacity-0 transition-opacity duration-300 lg:group-hover:opacity-100" />
+                    {/* <div className="pointer-events-none absolute inset-x-0 top-0 h-[3px] rounded-t-[30px] bg-[#C22ECC] opacity-0 transition-opacity duration-300 lg:group-hover:opacity-100" /> */}
                     <p className="sr-only">{slide.title}</p>
                 </article>
                 </CarouselItem>
