@@ -173,7 +173,7 @@ export default function Hero() {
                     inline-flex items-center justify-center !cursor-pointer
                     rounded-2xl border-2 border-[#5a1ac6] px-8 py-3
                     font-semibold text-[#4d189e]
-                    bg-white/85 backdrop-blur-[1px]
+                    backdrop-blur-[1px]
                     shadow-[0_8px_22px_rgba(76,22,167,0.2)]
                     transition-all duration-300 ease-out
                     hover:-translate-y-1 hover:bg-white
