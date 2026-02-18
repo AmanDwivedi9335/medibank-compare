@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    trailingSlash: true,
-    images: {
-      unoptimized: true, // Disables next/image optimization for static export
-    },
-  };
+  // Keep default route behavior on Vercel to avoid trailing-slash path mismatches.
+  images: {
+    unoptimized: true,
+  },
+};
 
 export default nextConfig;
