@@ -288,32 +288,16 @@ export default function UsersPage() {
           </p>
         </div>
 
-        <PhoneMockup className="md:justify-self-center">
-          <div className="h-full bg-[#F6F1FF] p-3 pt-7">
-            <div className="rounded-xl bg-[#6f1cb5] p-3 text-xs text-white shadow-md">
-              <p className="font-semibold">Upcoming Appointments</p>
-              <p className="opacity-90">Today, 5:30 PM • Dr. Priya</p>
-            </div>
-            <div className="mt-3 rounded-xl bg-white p-3 shadow-sm">
-              <p className="text-xs font-semibold text-[#6622b5]">Health Score</p>
-              <div className="mt-2 flex h-20 items-end gap-2">
-                <span className="h-9 w-5 rounded-t bg-[#9f7ddd]" />
-                <span className="h-14 w-5 rounded-t bg-[#8f62d9]" />
-                <span className="h-8 w-5 rounded-t bg-[#c4a1ea]" />
-                <span className="h-16 w-5 rounded-t bg-[#7741c3]" />
-                <span className="h-11 w-5 rounded-t bg-[#a679e2]" />
-              </div>
-            </div>
-            <div className="mt-3 rounded-xl bg-white p-3 shadow-sm">
-              <p className="text-xs font-semibold text-[#33154f]">Daily Vitals</p>
-              <div className="mt-2 flex items-center justify-between text-[11px] text-[#6b4c8f]">
-                <span>Pulse 74</span>
-                <span>Sleep 7.4h</span>
-                <span>Steps 6,200</span>
-              </div>
-            </div>
-          </div>
-        </PhoneMockup>
+        <div className="mx-auto w-full max-w-[220px] md:justify-self-center">
+          <Image
+            src="/images/users/smart-health-overview.svg"
+            alt="Smart Health Overview mobile dashboard"
+            width={354}
+            height={695}
+            className="h-auto w-full"
+            priority
+          />
+        </div>
 
         <PhoneMockup className="md:order-3 md:justify-self-start">
           <div className="relative h-full bg-white p-3 pt-7">
